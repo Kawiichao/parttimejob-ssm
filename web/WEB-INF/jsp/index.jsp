@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title> 农产品销售</title>
+<title> 校园兼职网</title>
 <link href="${pageContext.request.contextPath}/css/slider.css"
 	rel="stylesheet" type="text/css" />
 <link href="${pageContext.request.contextPath}/css/common.css"
