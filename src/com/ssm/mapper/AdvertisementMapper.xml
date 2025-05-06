@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.ssm.mapper.AdvertisementMapper">
+    <select id="selectAdvAll" resultType="com.ssm.entity.Advertisement">
+        select * from advertisement
+    </select>
+    <select id="selectAdvById" resultType="com.ssm.entity.Advertisement">
+        select * from advertisement where id=#{id}
+    </select>
+    <insert id="addAdvertisement" parameterType="com.ssm.entity.Advertisement">
+        insert into advertisement(id,title,content,publisher,publish_date,expire_date)
+        values(#{id},#{title},#{content},#{publisher},#{publishDate},#{expireDate})
+    </insert>
+    <update id="updateAdvertisementById" parameterType="com.ssm.entity.Advertisement">
+            update advertisement set title=#{title},content=#{content},publisher=#{publisher},publish_date=#{publishDate},expire_date=#{expireDate} where id=#{id}
+        </update>
+        <delete id="deleteAdvertisementById" parameterType="String">
+            delete from advertisement where id=#{id}
+        </delete>
+    <select id="selectAdvMapById" resultMap="AdvertisementResult">
+        SELECT * FROM advertisement WHERE id = #{id}
+    </select>
+    <select id="selectAdvMapAll" resultType="com.ssm.entity.Advertisement">
+        SELECT id, title, content, publisher, publish_date,expire_date
+        FROM advertisement
+    </select>
+    <resultMap  type="com.ssm.entity.Advertisement" id="AdvertisementResult">
+        <id column="id" property="id"/>
+        <result column="title" property="title"></result>
+        <result column="content" property="content"></result>
+        <result column="publisher" property="publisher"></result>
+        <result column="publish_date" property="publishDate"></result>
+        <result column="expire_date" property="expireDate"></result>
+    </resultMap>
+    </mapper>
+
