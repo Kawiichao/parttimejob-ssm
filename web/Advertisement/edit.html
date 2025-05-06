@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>编辑广告</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="../Css/style.css" />
+    <script type="text/javascript" src="../Js/jquery.js"></script>
+    <script type="text/javascript" src="../Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="../Js/bootstrap.js"></script>
+    <script type="text/javascript" src="../Js/ckform.js"></script>
+    <script type="text/javascript" src="../Js/common.js"></script>
+
+    <style type="text/css">
+        body {
+            padding-bottom: 40px;
+        }
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+<form action="index.html" method="post" class="definewidth m20">
+    <input type="hidden" name="id" value="{$advertisement.id}" />
+    <table class="table table-bordered table-hover definewidth m10">
+        <tr>
+            <td width="10%" class="tableleft">广告名称</td>
+            <td><input type="text" name="title" value="{$advertisement.title}"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">投放平台</td>
+            <td>
+                <select name="platform">
+                    <option value="web" <if condition="{$advertisement.platform} eq 'web'">selected</if>>网页</option>
+                    <option value="app" <if condition="{$advertisement.platform} eq 'app'">selected</if>>手机应用</option>
+                    <option value="social_media" <if condition="{$advertisement.platform} eq'social_media'">selected</if>>社交媒体</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="tableleft">广告链接</td>
+            <td><input type="text" name="link" value="{$advertisement.link}"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">展示图片/视频地址</td>
+            <td><input type="text" name="media_url" value="{$advertisement.media_url}"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">开始投放时间</td>
+            <td><input type="datetime-local" name="start_time" value="{$advertisement.start_time|date:'Y-m-d\TH:i:s'}"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">结束投放时间</td>
+            <td><input type="datetime-local" name="end_time" value="{$advertisement.end_time|date:'Y-m-d\TH:i:s'}"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">展示状态</td>
+            <td>
+                <input type="radio" name="status" value="1" <if condition="{$advertisement.status} eq 1">checked</if>> 启用
+                <input type="radio" name="status" value="0" <if condition="{$advertisement.status} eq 0">checked</if>> 禁用
+            </td>
+        </tr>
+        <tr>
+            <td class="tableleft"></td>
+            <td>
+                <button type="submit" class="btn btn-primary" type="button">保存</button>
+                &nbsp;&nbsp;
+                <button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
+<script>
+    $(function () {
+        $('#backid').click(function(){
+            window.location.href="index.html";
+        });
+    });
+</script>

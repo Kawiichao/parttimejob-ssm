@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>SSMProjectPreview</display-name>
   <welcome-file-list>
-    <welcome-file>index.action</welcome-file>
+    <welcome-file>admin.action</welcome-file>
   </welcome-file-list>
   
   <!-- 1.Spring配置文件：让Spring在web项目中起作用，让Spring IoC容器跟随项目一起启动 -->

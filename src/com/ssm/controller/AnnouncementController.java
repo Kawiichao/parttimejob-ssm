@@ -5,9 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 @Controller
-@RequestMapping("/announcement")
+@RequestMapping("/Announcement")
 public class AnnouncementController {
-    @RequestMapping( "/add")
+    @RequestMapping( "/findAnnouncement")
     public String addAnnouncement(Announcement announcement) {
         System.out.println("----- 公告部分 -----");
         System.out.println("公告ID：" + announcement.getId());
@@ -17,10 +17,5 @@ public class AnnouncementController {
         System.out.println("发布日期：" + announcement.getPublishDate());
         return "showAnnouncement";
     }
-        @RequestMapping("addByModelAndView")
-        public ModelAndView addByModelAndView(Announcement announcement) {
-            ModelAndView mv = new ModelAndView("showAnnouncement");
-            mv.addObject("announcementInfo", announcement);
-            return mv;
-        }
+
 }
