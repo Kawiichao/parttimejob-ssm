@@ -59,7 +59,7 @@
         <td>张三</td>
         <td>2025-04-28 17:34:08</td>
         <td>
-            <a href="edit.html">编辑</a>
+            <a href="edit.action?id=1">编辑</a>
         </td>
     </tr>
     <tr>
@@ -68,7 +68,7 @@
         <td>李四</td>
         <td>2025-04-28 19:23:15</td>
         <td>
-            <a href="edit.html">编辑</a>
+            <a href="edit.action?id=2">编辑</a>
         </td>
     </tr>
 
@@ -78,7 +78,7 @@
         <td>王五</td>
         <td>2025-04-28 19:24:12</td>
         <td>
-            <a href="edit.html">编辑</a>
+            <a href="edit.action?id=1=3">编辑</a>
         </td>
     </tr>
     <tr>
@@ -87,7 +87,7 @@
         <td>赵六</td>
         <td>2025-04-28 19:24:14</td>
         <td>
-            <a href="edit.html">编辑</a>
+            <a href="edit.action?id=1=4">编辑</a>
         </td>
     </tr>
     <tr>
@@ -96,7 +96,7 @@
         <td>钱七</td>
         <td>2025-04-28 19:24:17</td>
         <td>
-            <a href="edit.html">编辑</a>
+            <a href="edit.action?id=5">编辑</a>
         </td>
     </tr>
 

@@ -41,19 +41,19 @@
 <input type="hidden" name="id" value="{$user.id}" />
     <table class="table table-bordered table-hover definewidth m10">
         <tr>
-            <td width="10%" class="tableleft">登录名</td>
+            <td width="10%" class="tableleft">帖子标题</td>
             <td><input type="text" name="username" value="{$user.username}"/></td>
         </tr>
         <tr>
-            <td class="tableleft">密码</td>
+            <td class="tableleft">帖子内容</td>
             <td><input type="password" name="password"/></td>
         </tr>
         <tr>
-            <td class="tableleft">真实姓名</td>
+            <td class="tableleft">帖子作者</td>
             <td><input type="text" name="realname" value="{$user.realname}"/></td>
         </tr>
         <tr>
-            <td class="tableleft">邮箱</td>
+            <td class="tableleft">帖子类型</td>
             <td><input type="text" name="email" value="{$user.email}"/></td>
         </tr>
         <tr>
