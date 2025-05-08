@@ -13,6 +13,6 @@ public class AnnouncementController {
         public String addAnnouncement(Announcement announcement) {return "admin/Announcement/addAnnouncement";}
     @RequestMapping("editAnnouncement")
     public String editAnnouncement(Announcement announcement) {return "admin/Announcement/editAnnouncement";}
-/*@RequestMapping("findAnnouncement")
-public String findAnnouncement(Announcement announcement) {return "admin/Announcement/findAnnouncement";}*/}
+@RequestMapping("listAnnouncement")
+public String findAnnouncement(Announcement announcement) {return "admin/Announcement/listAnnouncement";}}
 

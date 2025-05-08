@@ -34,10 +34,10 @@
     </style>
 </head>
 <body>
-<form class="form-inline definewidth m20" action="Announcement/showAnnouncement.action" method="get">
+<form class="form-inline definewidth m20" action="${pageContext.request.contextPath}/Announcement/showAnnouncement.action" method="get">
     公告标题：
     <input type="text" name="announcementname" id="title"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
-    <button type="submit" class="btn btn-primary" >查询</button>&nbsp;&nbsp;
+    <a href="${pageContext.request.contextPath}/Announcement/listAnnouncement.action"><button type="submit" class="btn btn-primary" >查询</button></a>&nbsp;&nbsp;
     <a href="${pageContext.request.contextPath}/Announcement/addAnnouncement.action"><button type="button" class="btn btn-success" id="addnew" >新增公告</button></a>
 </form>
 <table class="table table-bordered table-hover definewidth m10" >
