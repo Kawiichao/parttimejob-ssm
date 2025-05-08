@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +52,7 @@
     </thead>
     <tr>
         <td colspan="5">技术类兼职</td>
-        <td><a href="edit.html">编辑</a></td>
+        <td><a href="edit.jsp">编辑</a></td>
     </tr>
     <tr>
         <td>软件开发兼职</td>
@@ -58,7 +60,7 @@
         <td>软件</td>
         <td>coding</td>
         <td>0</td>
-        <td><a href="edit.html">编辑</a></td>
+        <td><a href="edit.jsp">编辑</a></td>
     </tr>
     <tr>
         <td>网站设计兼职</td>
@@ -66,11 +68,11 @@
         <td>网站</td>
         <td>design</td>
         <td>0</td>
-        <td><a href="edit.html">编辑</a></td>
+        <td><a href="edit.jsp">编辑</a></td>
     </tr>
     <tr>
         <td colspan="5">服务类兼职</td>
-        <td><a href="edit.html">编辑</a></td>
+        <td><a href="edit.jsp">编辑</a></td>
     </tr>
     <tr>
         <td>外卖配送兼职</td>
@@ -78,7 +80,7 @@
         <td>餐饮</td>
         <td>deliver</td>
         <td>0</td>
-        <td><a href="edit.html">编辑</a></td>
+        <td><a href="edit.jsp">编辑</a></td>
     </tr>
     <tr>
         <td>家政服务兼职</td>
@@ -86,7 +88,7 @@
         <td>家庭</td>
         <td>clean</td>
         <td>1</td>
-        <td><a href="edit.html">编辑</a></td>
+        <td><a href="edit.jsp">编辑</a></td>
     </tr>
 </table>
 </body>

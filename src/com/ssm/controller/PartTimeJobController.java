@@ -1,6 +1,7 @@
 package com.ssm.controller;
 
 
+import com.ssm.entity.Announcement;
 import com.ssm.entity.PartTimeJob;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,12 +25,12 @@ public class PartTimeJobController {
         return "showPartTimeJob";
     }*/
     @Controller
-@RequestMapping("partTimeJob")
-public  class PartTimeJobController {
-        @RequestMapping("addByModelAndView")
-    public ModelAndView addByModelAndView(PartTimeJob partTimeJob){
-            ModelAndView mv=new ModelAndView("showPartTimeJob");
-            mv.addObject("partTimeJobInfo",partTimeJob);
-            return mv;
-}
+    @RequestMapping("/PartTimeJob")
+    public class PartTimeJobController {
+    @RequestMapping( "/showPartTimeJob")
+    public String showPartTimeJob(PartTimeJob partTimeJob) {return "admin/PartTimeJob/showPartTimeJob";}
+    @RequestMapping("addPartTimeJob")
+    public String addPartTimeJob(PartTimeJob partTimeJob) {return "admin/PartTimeJob/addPartTimeJob";}
+    @RequestMapping("editPartTimeJob")
+    public String editPartTimeJob(PartTimeJob partTimeJob) {return "admin/PartTimeJob/editPartTimeJob";}
 }

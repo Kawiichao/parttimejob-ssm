@@ -1,7 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>编辑兼职工作</title>
+    <title>新增兼职工作</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../Css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="../Css/bootstrap-responsive.css" />
@@ -31,8 +33,7 @@
     </style>
 </head>
 <body>
-<form action="index.html" method="post" class="definewidth m20">
-    <input type="hidden" name="id" value="{$job.id}" />
+<form action="index.jsp" method="post" class="definewidth m20">
     <table class="table table-bordered table-hover m10">
         <tr>
             <td width="10%" class="tableleft">上级兼职分类</td>
@@ -86,7 +87,7 @@
 <script>
     $(function () {
         $('#backid').click(function(){
-            window.location.href="index.html";
+            window.location.href="index.jsp";
         });
     });
 </script>
