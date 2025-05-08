@@ -36,6 +36,10 @@ public class PostController{
     public String add() {
         return "admin/Post/add";
     }
+    @RequestMapping(value = "/edit")
+    public String edit() {
+        return "admin/Post/edit";
+    }
 
 
 }

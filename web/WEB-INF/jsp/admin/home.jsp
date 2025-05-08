@@ -91,7 +91,7 @@
                             {id:'3',text:'广告管理',href:'${pageContext.request.contextPath}/Advertisement/showAdvertisement.action'},
                             {id:'4',text:'轮播管理',href:'${pageContext.request.contextPath}/Carousel/showCarousel.action'},
                             {id:'6',text:'兼职管理',href:'${pageContext.request.contextPath}/PartTimeJob/showPartTimeJob.action'},
-                            {id:'6',text:'帖子管理',href:'${pageContext.request.contextPath}/post/findPostAll.action'}
+                            {id:'5',text:'帖子管理',href:'${pageContext.request.contextPath}/post/findPostAll.action'}
                         ]
                     }
                 ]
