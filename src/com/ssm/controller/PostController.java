@@ -21,10 +21,21 @@ public class PostController {
 @Controller
 @RequestMapping("post")
 public class PostController{
-    @RequestMapping("/newadd")
-    public ModelAndView newadd(Post post){
-        ModelAndView mv=new ModelAndView("showPost");
-        mv.addObject("postInfo",post);
-        return mv;
+//    @RequestMapping("/newadd")
+//    public ModelAndView newadd(Post post){
+//        ModelAndView mv=new ModelAndView("showPost");
+//        mv.addObject("postInfo",post);
+//        return mv;
+//    }
+
+    @RequestMapping(value = "/findPostAll")
+    public String findPostAll() {
+        return "admin/Post/list";
     }
+    @RequestMapping(value = "/add")
+    public String add() {
+        return "admin/Post/add";
+    }
+
+
 }
