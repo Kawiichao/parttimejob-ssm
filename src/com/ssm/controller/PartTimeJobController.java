@@ -25,7 +25,7 @@ public class PartTimeJobController {
     public String addPartTimeJob(PartTimeJob partTimeJob) {
         return "admin/PartTimeJob/addPartTimeJob";
     }
-
+/* kk*/
     @RequestMapping("editPartTimeJob")
     public String editPartTimeJob(PartTimeJob partTimeJob) {
         return "admin/PartTimeJob/editPartTimeJob";

@@ -37,5 +37,5 @@
     </resultMap> -->
  <select id="findAll" resultType="com.ssm.entity.PartTimeJob">
   SELECT * FROM partTimeJob
- </select>
+  </select>
 </mapper>

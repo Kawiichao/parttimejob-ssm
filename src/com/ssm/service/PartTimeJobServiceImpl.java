@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 public class PartTimeJobServiceImpl implements PartTimeJobService {
-
+/*impl*/
     @Autowired
     private PartTimeJobMapper partTimeJobMapper;
 

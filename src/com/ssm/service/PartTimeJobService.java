@@ -5,5 +5,5 @@ import com.ssm.entity.PartTimeJob;
 import java.util.List;
 
 public interface PartTimeJobService {
-    List<PartTimeJob> findAll();
+    List<PartTimeJob> findAll();/*zhuzhichao*/
 }

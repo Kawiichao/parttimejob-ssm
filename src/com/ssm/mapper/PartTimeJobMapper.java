@@ -6,12 +6,12 @@ import java.util.List;
 
 public interface PartTimeJobMapper {
 
-  /*  PartTimeJob selectPartTimeJobById(int id);
+    PartTimeJob selectPartTimeJobById(int id);
     List<PartTimeJob> selectPartTimeJobAll();
     PartTimeJob selectPartTimeJobMapById(Integer id);
     List<PartTimeJob> selectPartTimeJobMapAll();
     void addPartTimeJob(PartTimeJob partTimeJob);
     void updatePartTimeJobById(PartTimeJob partTimeJob);
-    void deletePartTimeJobById(String partTimeJob);*/
+    void deletePartTimeJobById(String partTimeJob);
     List<PartTimeJob> findAll();
 }
