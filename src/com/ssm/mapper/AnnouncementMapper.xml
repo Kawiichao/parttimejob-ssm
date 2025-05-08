@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.ssm.mapper.AnnouncementMapper">
+     <!--  <select id="getAnnouncementId" resultType="com.ssm.entity.Announcement" parameterType="int">
+        select * from announcement where id=#{id}
+    </select>
+     <select id="selectAnnAll" resultType="com.ssm.entity.Announcement">
+            select * from announcement
+        </select>
+
+    <insert id="addAnnouncement" parameterType="com.ssm.entity.Announcement">
+        insert into announcement(id, title, content, publisher, publish_date)
+        values(#{id}, #{title}, #{content}, #{publisher}, #{publishDate})
+    </insert>
+    <update id="updateAnnouncementById" parameterType="com.ssm.entity.Announcement">
+        update announcement set title=#{title},content=#{content},publisher=#{publisher},publish_date=#{publishDate} where id=#{id}
+    </update>
+    <delete id="deleteAnnouncementById" parameterType="String">
+        delete from announcement where id=#{id}
+    </delete>
+    <select id="selectAnnMapById" resultMap="AnnouncementResult">
+        SELECT * FROM announcement WHERE id = #{id}
+    </select>
+    <select id="selectAnnMapAll" resultType="com.ssm.entity.Announcement">
+        SELECT id, title, content, publisher, publish_date
+        FROM announcement
+    </select>
+    <resultMap  type="com.ssm.entity.Announcement" id="AnnouncementResult">
+        <id column="id" property="id"/>-->
+       <!--<result property="类中属性名" column="数据库中字段名">
+    -->
+       <!-- <result column="title" property="title"></result>
+        <result column="content" property="content"></result>
+        <result column="publisher" property="publisher"></result>
+        <result column="publishDate" property="publish_date"></result>
+    </resultMap>-->
+
+    </mapper>
+

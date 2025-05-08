@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>编辑帖子</title>
+    <title>新增广告</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../Css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="../Css/bootstrap-responsive.css" />
@@ -32,39 +32,42 @@
 </head>
 <body>
 <form action="index.html" method="post" class="definewidth m20">
-    <input type="hidden" name="id" value="{$post.id}" />
-    <table class="table table-bordered table-hover m10">
+    <table class="table table-bordered table-hover definewidth m10">
         <tr>
-            <td width="10%" class="tableleft">上级分类</td>
+            <td width="10%" class="tableleft">广告名称</td>
+            <td><input type="text" name="title"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">投放平台</td>
             <td>
-                <select name="parentid">
-                    <option value="0">无上级分类</option>
-                    <option value='1'>&nbsp;技术交流</option>
-                    <option value='2'>&nbsp;生活分享</option>
+                <select name="platform">
+                    <option value="web">网页</option>
+                    <option value="app">手机应用</option>
+                    <option value="social_media">社交媒体</option>
                 </select>
             </td>
         </tr>
         <tr>
-            <td class="tableleft">帖子标题</td>
-            <td><input type="text" name="title" value="{$post.title}"/></td>
+            <td class="tableleft">广告链接</td>
+            <td><input type="text" name="link"/></td>
         </tr>
         <tr>
-            <td class="tableleft">帖子类型</td>
-            <td><input type="text" name="type" value="{$post.type}"/></td>
+            <td class="tableleft">展示图片/视频地址</td>
+            <td><input type="text" name="media_url"/></td>
         </tr>
         <tr>
-            <td class="tableleft">内容摘要</td>
-            <td><input type="text" name="summary" value="{$post.summary}"/></td>
+            <td class="tableleft">开始投放时间</td>
+            <td><input type="datetime-local" name="start_time"/></td>
         </tr>
         <tr>
-            <td class="tableleft">帖子内容</td>
-            <td><textarea name="content">{$post.content}</textarea></td>
+            <td class="tableleft">结束投放时间</td>
+            <td><input type="datetime-local" name="end_time"/></td>
         </tr>
         <tr>
-            <td class="tableleft">发布状态</td>
+            <td class="tableleft">展示状态</td>
             <td>
-                <input type="radio" name="status" value="0" <if condition="{$post.status} eq 0">checked</if>> 已发布
-                <input type="radio" name="status" value="1" <if condition="{$post.status} eq 1">checked</if>> 草稿
+                <input type="radio" name="status" value="1" checked/> 启用
+                <input type="radio" name="status" value="0"/> 禁用
             </td>
         </tr>
         <tr>
@@ -82,7 +85,7 @@
 <script>
     $(function () {
         $('#backid').click(function(){
-            window.location.href="index.html";
+            window.location.href="showAdvertisement.jsp";
         });
     });
 </script>

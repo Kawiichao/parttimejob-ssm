@@ -12,6 +12,17 @@ public class Announcement {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date publishDate; // 公告的发布日期
 
+    public Announcement() {
+    }
+
+    public Announcement(int id, String title, String content, String publisher, Date publishDate) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.publisher = publisher;
+        this.publishDate = publishDate;
+    }
+
     // Getters and Setters
     public int getId() {
         return id;
