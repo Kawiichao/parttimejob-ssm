@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 映射文件：存放 CRUD 的 sql 语句 -->
+<mapper namespace="com.ssm.mapper.PostMapper">
+    <!-- 根据指定 id 查询学生信息 -->
+    <select id="getPostById" resultType="com.ssm.entity.Post" parameterType="String">
+        select * from post where id = #{id}
+    </select>
+
+    <!-- 查询所有学生:返回值 List<Student> -->
+    <select id="getPostAll" resultType="com.ssm.entity.Post">
+        select * from post
+    </select>
+
+    <!-- 插入一个学生信息 -->
+    <insert id="addPost" parameterType="com.ssm.entity.Post">
+        insert into post(id, author, title, content,publish_date,like_count)
+        values(#{id}, #{author}, #{title}, #{content},#{publishDate},#{likeCount})
+    </insert>
+
+
+    <update id="updatePostById" parameterType="com.ssm.entity.Post">
+
+        update post set author=#{author}, title=#{title}, content=#{content},publish_date=#{publishDate},like_count=#{likeCount} where id=#{id}
+    </update>
+
+
+    <delete id="deletePostById" parameterType="String">
+
+        delete from post where id=#{id}
+    </delete>
+
+
+    <select id="getPostByIdWithResultMap" parameterType="String" resultMap="PostResult">
+        SELECT * FROM post WHERE id = #{id}
+    </select>
+
+    <resultMap type="com.ssm.entity.Post" id="PostResult">
+        <id property="id" column="id"/>
+<!--        <result property="类中属性名" column="数据库字段名"/>-->
+<!--        <result property="类中属性名" column="数据库字段名" />-->
+    </resultMap>
+</mapper>

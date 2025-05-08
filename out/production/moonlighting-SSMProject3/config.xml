@@ -19,11 +19,11 @@
         </environment>
     </environments>
     <!-- 移除手动指定Mapper接口类部分 -->
-    <mappers>
+    <!-- <mappers>
         <mapper class="com.ssm.mapper.AnnouncementMapper"/>
         <mapper class="com.ssm.mapper.AdvertisementMapper"/>
         <mapper class="com.ssm.mapper.PostMapper"/>
         <mapper class="com.ssm.mapper.PartTimeJobMapper"/>
         <mapper class="com.ssm.mapper.CarouselMapper"/>
-    </mappers>
+    </mappers> -->
 </configuration>

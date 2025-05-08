@@ -79,7 +79,7 @@
 	b.采用实体DAO调用方式，采用接口org.apache.ibatis.session.SqlSession的实现类org.mybatis.spring.SqlSessionTemplate
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">     
         <constructor-arg index="0" ref="sqlSessionFactory"></constructor-arg> 
-    </bean>  -->
+    </bean> -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 			<property name="basePackage" value="com.ssm.mapper"></property>
 </bean>

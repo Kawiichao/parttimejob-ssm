@@ -79,6 +79,7 @@ public class PartTimeJob {
         this.contact = contact;
     }
 
+
     @Override
     public String toString() {
         return "PartTimeJob\n" +
@@ -92,7 +93,3 @@ public class PartTimeJob {
                 "联系方式='" + contact +  ",\n" ;
     }
 }
-
-
-
-
