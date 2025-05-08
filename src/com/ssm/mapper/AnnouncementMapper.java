@@ -12,5 +12,4 @@ public interface AnnouncementMapper {
     void addAnnouncement(Announcement announcement);
     void updateAnnouncementById(Announcement announcement);
     void deleteAnnouncementById(String announcement);*/
-
 }
