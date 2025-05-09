@@ -82,7 +82,7 @@
 <script>
     $(function () {       
 		$('#backid').click(function(){
-				window.location.href="{:U('User/index')}";
+				window.location.href="${pageContext.request.contextPath}/post/findPostAll.action";
 		 });
 
     });

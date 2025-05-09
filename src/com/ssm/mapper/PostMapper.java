@@ -16,4 +16,7 @@ public interface PostMapper {
     void updatePostById(Post post);
     void deletePostById(String id);
     Post getPostByIdWithResultMap(String id);
+    Post getPostAndCategory(String id);
+    List<Post> getPostAndCategoryAll();
+
 }

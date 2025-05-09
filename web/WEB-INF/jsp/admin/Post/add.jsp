@@ -14,7 +14,7 @@
     <script type="text/javascript" src="../../../../Js/ckform.js"></script>
     <script type="text/javascript" src="../../../../Js/common.js"></script>
 
- 
+
 
     <style type="text/css">
         body {
@@ -38,49 +38,49 @@
 </head>
 <body>
 <form action="list.jsp" method="post" class="definewidth m20">
-<table class="table table-bordered table-hover definewidth m10">
-    <tr>
-        <td width="10%" class="tableleft">帖子标题</td>
-        <td><input type="text" name="username"/></td>
-    </tr>
-    <tr>
-        <td class="tableleft">帖子内容</td>
-        <td><input type="password" name="password"/></td>
-    </tr>
-    <tr>
-        <td class="tableleft">帖子作者</td>
-        <td><input type="text" name="realname"/></td>
-    </tr>
-    <tr>
-        <td class="tableleft">帖子类型</td>
-        <td><input type="text" name="email"/></td>
-    </tr>
-    <tr>
-        <td class="tableleft">状态</td>
-        <td>
-            <input type="radio" name="status" value="1" checked/> 启用
-           <input type="radio" name="status" value="0"/> 禁用
-        </td>
-    </tr>
-    <tr>
-        <td class="tableleft">角色</td>
-        <td>{$role_checkbox}</td>
-    </tr>
-    <tr>
-        <td class="tableleft"></td>
-        <td>
-            <button type="submit" class="btn btn-primary" type="button">保存</button> &nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
-        </td>
-    </tr>
-</table>
+    <table class="table table-bordered table-hover definewidth m10">
+        <tr>
+            <td width="10%" class="tableleft">帖子标题</td>
+            <td><input type="text" name="username"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">帖子内容</td>
+            <td><input type="password" name="password"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">帖子作者</td>
+            <td><input type="text" name="realname"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">帖子类型</td>
+            <td><input type="text" name="email"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">状态</td>
+            <td>
+                <input type="radio" name="status" value="1" checked/> 启用
+                <input type="radio" name="status" value="0"/> 禁用
+            </td>
+        </tr>
+        <tr>
+            <td class="tableleft">角色</td>
+            <td>{$role_checkbox}</td>
+        </tr>
+        <tr>
+            <td class="tableleft"></td>
+            <td>
+                <button type="submit" class="btn btn-primary" type="button">保存</button> &nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+            </td>
+        </tr>
+    </table>
 </form>
 </body>
 </html>
 <script>
-    $(function () {       
-		$('#backid').click(function(){
-				window.location.href="index.jsp";
-		 });
+    $(function () {
+        $('#backid').click(function(){
+            window.location.href="${pageContext.request.contextPath}/post/findPostAll.action";
+        });
 
     });
 </script>

@@ -14,7 +14,7 @@
     <script type="text/javascript" src="../../../../Js/ckform.js"></script>
     <script type="text/javascript" src="../../../../Js/common.js"></script>
 
- 
+
 
     <style type="text/css">
         body {
@@ -37,99 +37,81 @@
     </style>
 </head>
 <body>
-<form class="form-inline definewidth m20" action="index.html" method="get">    
+<form class="form-inline definewidth m20" action="index.html" method="get">
     帖子名称：
-    <input type="text" name="username" id="username"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;  
+    <input type="text" name="username" id="username"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
     <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp;
     <button type="button" class="btn btn-success" id="addnew">添加帖子</button>
 </form>
 <table class="table table-bordered table-hover definewidth m10">
     <thead>
     <tr>
-        <th>帖子id</th>
-        <th>帖子名称</th>
-        <th>帖子作者</th>
-        <th>发布时间</th>
+        <th>id</th>
+        <th>author</th>
+        <th>title</th>
+        <th>content</th>
+        <th>publishDate</th>
+        <th>likeCount</th>
+        <%--        <th>categoryid</th>--%>
+        <%--        <th>categoryName</th> <!-- 新增分类列 -->--%>
         <th>操作</th>
     </tr>
     </thead>
-    <tr>
-        <td>1</td>
-        <td>spring框架</td>
-        <td>张三</td>
-        <td>2025-04-28 17:34:08</td>
-        <td>
-            <a href="edit.action?id=1">编辑</a>
-        </td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>springmvc</td>
-        <td>李四</td>
-        <td>2025-04-28 19:23:15</td>
-        <td>
-            <a href="edit.action?id=2">编辑</a>
-        </td>
-    </tr>
-
-    <tr>
-        <td>3</td>
-        <td>mybatis</td>
-        <td>王五</td>
-        <td>2025-04-28 19:24:12</td>
-        <td>
-            <a href="edit.action?id=1=3">编辑</a>
-        </td>
-    </tr>
-    <tr>
-        <td>4</td>
-        <td>SSM</td>
-        <td>赵六</td>
-        <td>2025-04-28 19:24:14</td>
-        <td>
-            <a href="edit.action?id=1=4">编辑</a>
-        </td>
-    </tr>
-    <tr>
-        <td>5</td>
-        <td>Spring Boot入门指南</td>
-        <td>钱七</td>
-        <td>2025-04-28 19:24:17</td>
-        <td>
-            <a href="edit.action?id=5">编辑</a>
-        </td>
-    </tr>
+    <c:forEach var="post" items="${requestScope.postInfo}">
+        <tr>
+            <td>${post.id}</td>
+            <td>${post.author}</td>
+            <td>${post.title}</td>
+            <td>${post.content}</td>
+            <td>${post.publishDate}</td>
+            <td>${post.likeCount}</td>
+                <%--            <td>${post.category.id}</td> <!-- 显示分类名称 -->--%>
+                <%--            <td>${post.category.categoryName}</td> <!-- 显示分类名称 -->--%>
+            <td>
+                <a href="edit.action?id=${post.id}">编辑</a>
+            </td>
+        </tr>
+    </c:forEach>
 
 </table>
+
+<a href="${pageContext.request.contextPath}/post/getPostAll.action">查询所有帖子的信息</a> <br>
+
+
+<h4>查询所有学生的信息</h4>
+<form action="${pageContext.request.contextPath}/post/getPostAll.action">
+    <input type="submit" name="查询所有">
+</form><br>
+
 </body>
 </html>
 <script>
     $(function () {
-        
 
-		$('#addnew').click(function(){
 
-				window.location.href="add.action";
-		 });
+        $('#addnew').click(function(){
+
+            window.location.href="add.action";
+        });
 
 
     });
 
-	function del(id)
-	{
-		
-		
-		if(confirm("确定要删除吗？"))
-		{
-		
-			var url = "index.jsp";
-			
-			window.location.href=url;		
-		
-		}
-	
-	
-	
-	
-	}
+    function del(id)
+    {
+
+
+        if(confirm("确定要删除吗？"))
+        {
+
+            var url = "index.html";
+
+            window.location.href=url;
+
+        }
+
+
+
+
+    }
 </script>

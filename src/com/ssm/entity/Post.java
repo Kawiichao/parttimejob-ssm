@@ -1,8 +1,7 @@
 package com.ssm.entity;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Post {
     // 帖子ID
@@ -19,11 +18,39 @@ public class Post {
     private String content;
 
     // 发布时间
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date publishDate;
+
+    private LocalDateTime publishDate;
 
     // 点赞数
     private int likeCount;
+
+//    private Category category;
+//
+//    public Category getCategory() {
+//        return category;
+//    }
+//
+//    public void setCategory(Category category) {
+//        this.category = category;
+//    }
+
+    public Post() {
+    }
+
+    public Post(String id, String author, String title, String content, String publishDate, String likeCount) {
+        this.id = Integer.parseInt(id); // 字符串转 int
+        this.author = author;
+        this.title = title;
+        this.content = content;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        this.publishDate = LocalDateTime.parse(publishDate, formatter);  // 字符串转LocalDateTime
+        this.likeCount = Integer.parseInt(likeCount); // 字符串转 int
+    }
+
+
+
+
+
 
     public int getId() {
         return id;
@@ -57,11 +84,11 @@ public class Post {
         this.content = content;
     }
 
-    public Date getPublishDate() {
+    public LocalDateTime getPublishDate() {
         return publishDate;
     }
 
-    public void setPublishDate(Date publishDate) {
+    public void setPublishDate(LocalDateTime publishDate) {
         this.publishDate = publishDate;
     }
 

@@ -10,9 +10,23 @@
     </select>
 
     <!-- 查询所有学生:返回值 List<Student> -->
-    <select id="getPostAll" resultType="com.ssm.entity.Post">
-        select * from post
+    <!--    <select id="getPostAll" resultType="com.ssm.entity.Post">-->
+    <!--        select * from post-->
+    <!--    </select>-->
+    <resultMap id="postResultMap" type="com.ssm.entity.Post">
+        <id column="id" property="id"/> <!-- 主键映射 -->
+        <result column="author" property="author"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="publish_date" property="publishDate"/> <!-- 数据库字段 publish_date 映射到 Java 属性 publishDate -->
+        <result column="like_count" property="likeCount"/> <!-- 数据库字段 like_count 映射到 Java 属性 likeCount -->
+    </resultMap>
+
+    <!-- 修改查询语句，使用 resultMap 代替 resultType -->
+    <select id="getPostAll" resultMap="postResultMap">
+        SELECT * FROM post
     </select>
+
 
     <!-- 插入一个学生信息 -->
     <insert id="addPost" parameterType="com.ssm.entity.Post">
@@ -39,7 +53,52 @@
 
     <resultMap type="com.ssm.entity.Post" id="PostResult">
         <id property="id" column="id"/>
-<!--        <result property="类中属性名" column="数据库字段名"/>-->
-<!--        <result property="类中属性名" column="数据库字段名" />-->
+        <!--        <result property="类中属性名" column="数据库字段名"/>-->
+        <!--        <result property="类中属性名" column="数据库字段名" />-->
     </resultMap>
+
+    <!-- 一对一映射：@association 与 resultMap 嵌套结果集
+  注意：若对查询后的字段名重新命名，column 值=新的命名；
+    若未对查询后的字段名重新命名，column 值=数据库表中字段名-->
+
+
+<!--    <select id="getPostAndCategory" resultMap="PostAndCategoryResult" parameterType="String">-->
+<!--        SELECT p.id postNo,p.author postAuthor, c.categoryname categoryName FROM post p, category c WHERE p.categoryid=c.id AND p.id=#{id}-->
+<!--    </select>-->
+<!--    <resultMap type="com.ssm.entity.Post" id="PostAndCategoryResult">-->
+<!--        <id property="id" column="postNo"/>-->
+<!--        <result property="author" column="postAuthor"/>-->
+<!--        <association property="category" resultMap="category"></association>-->
+<!--    </resultMap>-->
+<!--    <resultMap type="com.ssm.entity.Category" id="category">-->
+<!--        <result property="categoryName" column="categoryName"/>-->
+<!--    </resultMap>-->
+
+<!--    &lt;!&ndash; 查询所有帖子和对应的分类信息 &ndash;&gt;-->
+<!--    <select id="getPostAndCategoryAll" resultMap="PostAndCategoryAllResult">-->
+<!--        SELECT p.id as postId,p.author as postAuthor,p.title as postTitle,p.content as postContent,p.publish_date as postPublishDate,p.like_count as postLikeCount,-->
+<!--               c.id as categoryId,c.categoryname as categoryName-->
+<!--        FROM post p-->
+<!--                 LEFT JOIN category c ON p.categoryid = c.id-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash; 完整的resultMap配置 &ndash;&gt;-->
+<!--    <resultMap type="com.ssm.entity.Post" id="PostAndCategoryAllResult">-->
+<!--        <id property="id" column="postId"/>-->
+<!--        <result property="author" column="postAuthor"/>-->
+<!--        <result property="title" column="postTitle"/>-->
+<!--        <result property="content" column="postContent"/>-->
+<!--        <result property="publishDate" column="postPublishDate"/>-->
+<!--        <result property="likeCount" column="postLikeCount"/>-->
+<!--        <association property="category" javaType="com.ssm.entity.Category">-->
+<!--            <id property="id" column="categoryId"/>-->
+<!--            <result property="categoryName" column="categoryName"/>-->
+<!--        </association>-->
+<!--    </resultMap>-->
+
+    <!--    <select id="getPostAll" resultType="com.ssm.entity.Post">-->
+    <!--        select * from post-->
+    <!--    </select>-->
+
+
 </mapper>
