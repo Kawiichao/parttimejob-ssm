@@ -5,9 +5,6 @@
      <!--  <select id="getAnnouncementId" resultType="com.ssm.entity.Announcement" parameterType="int">
         select * from announcement where id=#{id}
     </select>
-     <select id="selectAnnAll" resultType="com.ssm.entity.Announcement">
-            select * from announcement
-        </select>
 
     <insert id="addAnnouncement" parameterType="com.ssm.entity.Announcement">
         insert into announcement(id, title, content, publisher, publish_date)
@@ -22,19 +19,20 @@
     <select id="selectAnnMapById" resultMap="AnnouncementResult">
         SELECT * FROM announcement WHERE id = #{id}
     </select>
-    <select id="selectAnnMapAll" resultType="com.ssm.entity.Announcement">
+
+
+       <!-<result property="类中属性名" column="数据库中字段名">
+    -->
+    <select id="findAnnouncementAll" resultType="com.ssm.entity.Announcement">
         SELECT id, title, content, publisher, publish_date
         FROM announcement
     </select>
-    <resultMap  type="com.ssm.entity.Announcement" id="AnnouncementResult">
-        <id column="id" property="id"/>-->
-       <!--<result property="类中属性名" column="数据库中字段名">
-    -->
-       <!-- <result column="title" property="title"></result>
-        <result column="content" property="content"></result>
-        <result column="publisher" property="publisher"></result>
-        <result column="publishDate" property="publish_date"></result>
-    </resultMap>-->
-
+    <resultMap type="com.ssm.entity.Announcement" id="AnnouncementResult">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="publisher" property="publisher"/>
+        <result column="publish_date" property="publishDate"/>
+    </resultMap>
     </mapper>
 
