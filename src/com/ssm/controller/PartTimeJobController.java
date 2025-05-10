@@ -15,7 +15,6 @@ public class PartTimeJobController {
 
     @Autowired
     private PartTimeJobService partTimeJobService;
-
     // 1. 访问兼职首页（对应 indexPartTimeJob.jsp）
     @RequestMapping("/indexPartTimeJob")
     public String index() {
