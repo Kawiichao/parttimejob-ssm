@@ -1,6 +1,7 @@
 package com.ssm.mapper;
 
 import com.ssm.entity.PartTimeJob;
+import com.ssm.entity.Post;
 
 import java.util.List;
 
@@ -13,5 +14,6 @@ public interface PartTimeJobMapper {
     void addPartTimeJob(PartTimeJob partTimeJob);
     void updatePartTimeJobById(PartTimeJob partTimeJob);
     void deletePartTimeJobById(String partTimeJob);
-    List<PartTimeJob> findAll();
+    Post getPartTimeJobById(String id);
+    List<PartTimeJob> getPartTimeJobAll();
 }
